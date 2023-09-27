@@ -1,7 +1,14 @@
-export const UsersList = () => {
-    return (
-        <div className="users-list">
+import { Card } from "../UI/Card"
+import classes from "./UsersList.module.css"
 
-        </div>
+export const UsersList = (props) => {
+    return (
+        <Card className={classes.users}>
+            <ul className="users-list">
+                {props.users.map((user) => (
+                    <li key={user.id}>{user.name} ({user.age} years old)</li>
+                ))}
+            </ul>
+        </Card>
     )
 }
